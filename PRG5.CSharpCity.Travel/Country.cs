@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Globalization;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 namespace PRG5.CSharpCity.Travel
 {
@@ -27,5 +24,6 @@ namespace PRG5.CSharpCity.Travel
         public string AccessCode { get; set; }
         public string Region { get; set; }
         public string SubRegion { get; set; }
+        public List<string> Languages { get; set; }
     }
 }

@@ -41,20 +41,20 @@
 
             <tr class="bg-primary">
                 <th>
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Destination" asp-action="Sort" asp-route-id="@Html.DisplayNameFor(modelItem => Model.Countries.First().NativeName)">
+                    <a class="nav-link text-danger" asp-area="" asp-controller="Destination" asp-action="Sort" asp-route-id="EnglishName">
                         Name
                     </a>
                 </th>
                 <th>
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Destination" asp-action="Sort" asp-route-id="@Html.DisplayNameFor(modelItem => Model.Countries.First().ISOCode)">
-                       Iso code
-                    </a>
+                    ISO Code
                 </th>
                 <th>
                     Native Name
                 </th>
                 <th>
-                    Capital
+                    <a class="nav-link text-danger" asp-area="" asp-controller="Destination" asp-action="Sort" asp-route-id="Capital">
+                        Capital
+                    </a>
                 </th>
                 <th>
                     Currency

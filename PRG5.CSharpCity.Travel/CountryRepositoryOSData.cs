@@ -31,6 +31,7 @@ namespace PRG5.CSharpCity.Travel
                             NativeName = region.NativeName,
                             IsMetric = region.IsMetric,
                             ISOCode = region.TwoLetterISORegionName,
+                            Capital = "",
                             Currency = new Currency
                             {
                                 Code = region.ISOCurrencySymbol,

@@ -51,22 +51,12 @@ namespace PRG5.CSharpCity.Travel
                             Name = c.currencies.First().name,
                             Symbol = c.currencies.First().symbol
                         } : null,
+                        Languages = c.languages.Select(l => l.name).ToList()
                     }
                     ));
                 countryCache = result;
             }
             return countryCache;
         }
-
-        public Country FindCountryByCode(string code)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Country FindCountryByName(string namePart)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }
