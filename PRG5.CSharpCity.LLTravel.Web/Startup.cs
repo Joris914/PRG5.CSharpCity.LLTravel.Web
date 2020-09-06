@@ -26,7 +26,6 @@ namespace PRG5.CSharpCity.LLTravel.Web
         {
             // We have 3 choices for this interface, either we use Operating System Data
             // Operating System data does not contain Capital per country information
-
             //services.AddSingleton<ICountryRepository, CountryRepositoryOSData>();
             // we use a REST service from the internet
             services.AddHttpClient<CountryRepositoryREST>();

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PRG5.CSharpCity.Travel
 {
-    public class CountryRepositoryOSData : ICountryRepository
+    public class CountryRepositoryOSData 
     {
         private static List<Country> countryList = getAll();
        

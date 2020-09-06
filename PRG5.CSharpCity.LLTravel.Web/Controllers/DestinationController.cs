@@ -80,9 +80,7 @@ namespace PRG5.CSharpCity.LLTravel.Web.Controllers
         public IActionResult EuroArea()
         {
             DestinationViewModel destinations = new DestinationViewModel();
-            // do your stuff here. Check the methods in this class for hints and clues 
-
-
+            destinations.Countries = _countryRepository.FindByCurrency("€");
             ViewBag.FilterName = "Euro area";
             return View("FilteredDestinations", destinations);
         }
@@ -90,8 +88,7 @@ namespace PRG5.CSharpCity.LLTravel.Web.Controllers
         public IActionResult EnglishSpeaking()
         {
             DestinationViewModel destinations = new DestinationViewModel();
-            // do your stuff here. Check the methods in this class for hints and clues 
-
+            destinations.Countries = _countryRepository.FindByLanguage("English");
             ViewBag.FilterName = "English speaking";
             return View("FilteredDestinations", destinations);
         }
@@ -99,9 +96,7 @@ namespace PRG5.CSharpCity.LLTravel.Web.Controllers
         public IActionResult JustAfrica()
         {
             DestinationViewModel destinations = new DestinationViewModel();
-            // do your stuff here. Check the methods in this class for hints and clues 
-            // Only destination in africa, ordered by country name
-
+            destinations.Countries = _countryRepository.FindByRegion("Africa");
             ViewBag.FilterName = "African";
             return View("FilteredDestinations", destinations);
         }

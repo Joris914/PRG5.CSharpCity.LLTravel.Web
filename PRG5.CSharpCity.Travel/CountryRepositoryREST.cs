@@ -20,10 +20,13 @@ namespace PRG5.CSharpCity.Travel
             var httpClient = httpClientFactory.CreateClient("CountryRepositoryREST");
             httpClient.BaseAddress = new Uri(serviceUrl);
             _httpClient = httpClient;
+            LoadData();
         }
 
-
-        public List<Country> FindAll()
+        /// <summary>
+        /// Loads data from the datasource, this implementation uses a JSON REST service
+        /// </summary>
+        private void LoadData()
         {
             List<RestCountry> queryResponse;
             if (countryCache == null)
@@ -56,7 +59,67 @@ namespace PRG5.CSharpCity.Travel
                     ));
                 countryCache = result;
             }
+        }
+
+        /// <summary>
+        /// Finds all available countries
+        /// </summary>
+        /// <returns></returns>
+        public List<Country> FindAll()
+        {
+            if (countryCache == null)
+            {
+                LoadData();
+            }
             return countryCache;
+        }
+
+        /// <summary>
+        /// Finds all countries use a specific currency
+        /// </summary>
+        /// <param name="currency">€,$,etc</param>
+        /// <returns></returns>
+        public List<Country> FindByCurrency(string currency)
+        {
+            List<Country> result = new List<Country>();
+            if (countryCache == null)
+            {
+                LoadData();
+            }
+            //do your stuff here
+            return result;
+        }
+
+        /// <summary>
+        /// Finds all countries from our list where specified language is an offical (native) language
+        /// </summary>
+        /// <param name="language"></param>
+        /// <returns></returns>
+        public List<Country> FindByLanguage(string language)
+        {
+            List<Country> result = new List<Country>();
+            if (countryCache == null)
+            {
+                LoadData();
+            }
+            //do your stuff here
+            return result;
+        }
+
+        /// <summary>
+        /// Finds all countries for our list that belong to a specific region
+        /// </summary>
+        /// <param name="region"></param>
+        /// <returns></returns>
+        public List<Country> FindByRegion(string region)
+        {
+            List<Country> result = new List<Country>();
+            if (countryCache == null)
+            {
+                LoadData();
+            }
+            //do your stuff here
+            return result;
         }
     }
 }
