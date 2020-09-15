@@ -81,6 +81,7 @@ namespace PRG5.CSharpCity.LLTravel.Web.Controllers
         {
             DestinationViewModel destinations = new DestinationViewModel();
             destinations.Countries = _countryRepository.FindByCurrency("€");
+            destinations.Countries = destinations.Countries.OrderBy(c => c.EnglishName).ToList();
             ViewBag.FilterName = "Euro area";
             return View("FilteredDestinations", destinations);
         }
@@ -89,6 +90,7 @@ namespace PRG5.CSharpCity.LLTravel.Web.Controllers
         {
             DestinationViewModel destinations = new DestinationViewModel();
             destinations.Countries = _countryRepository.FindByLanguage("English");
+            destinations.Countries = destinations.Countries.OrderByDescending(c => c.SubRegion).ToList();
             ViewBag.FilterName = "English speaking";
             return View("FilteredDestinations", destinations);
         }
@@ -97,6 +99,7 @@ namespace PRG5.CSharpCity.LLTravel.Web.Controllers
         {
             DestinationViewModel destinations = new DestinationViewModel();
             destinations.Countries = _countryRepository.FindByRegion("Africa");
+            destinations.Countries = destinations.Countries.OrderBy(c => c.EnglishName).ToList();
             ViewBag.FilterName = "African";
             return View("FilteredDestinations", destinations);
         }
